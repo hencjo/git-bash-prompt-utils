@@ -1,4 +1,4 @@
-git-bash-prompt-utils
+dgit-bash-prompt-utils
 =====================
 
 Small collection of helpers for a nicer bash PS1 when working with git repositories. For instance, git relative subdir.
@@ -23,10 +23,17 @@ demo/
                 └── java
                     └── Module2Test.java
 
+~ $ cd demo/
+~/demo $ cd git-repo/
+ master / $ cd module1/src/main/java/
+ master /module1/src/main/java $ 
 
 ```
 
+(The example is using __git_relative_subdir in combination with __git_ps1 to provide the current branch)
 
+Link to image showing it in a terminal window:
+[example.png](demo/example.png)
 
 ### Usage
 
@@ -53,5 +60,5 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$
 # with PS1 using __git_relative_subdir:
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] `__git_relative_subdir` \$\[\033[00m\] '
 ```
-(Make sure you use ''s and not ""s)
+(Make sure you use 's and not "s)
 
