@@ -8,7 +8,25 @@ Small collection of helpers for a nicer bash PS1 when working with git repositor
 When working in a git repo, show the working directory relative to the git root.
 
 ### Example
-... 
+
+Assume a project layout of:
+```
+$ tree demo/
+demo/
+└── git-repo
+    └── module1
+        └── src
+            ├── main
+            │   └── java
+            │       └── Module1.java
+            └── test
+                └── java
+                    └── Module2Test.java
+
+
+```
+
+
 
 ### Usage
 
@@ -30,8 +48,10 @@ source ~/applications/git-bash-prompt-extras.sh
 Replace \w in PS1 with `__git_relative_subdir`, like:
 ```
 # Replace
-PS1=${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] 
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 
 # with PS1 using __git_relative_subdir:
-PS1=${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] `__git_relative_subdir` \$\[\033[00m\] 
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] `__git_relative_subdir` \$\[\033[00m\] '
 ```
+(Make sure you use ''s and not ""s)
+
