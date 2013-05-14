@@ -3,12 +3,6 @@ git-bash-prompt-utils
 
 Small collection of helpers for a nicer bash PS1 when working with git repositories. For instance, git relative subdir.
 
-## Contents
-
-git-bash-prompt-extras.sh contains the following functions:
-
-* __git_relative_subdir : When working in a git repo, show the working directory relative to the git root.
-
 ## __git_relative_subdir 
 
 When working in a git repo, show the working directory relative to the git root.
@@ -19,21 +13,20 @@ When working in a git repo, show the working directory relative to the git root.
 ### Usage
 
 1. Somehow get your copy of git-bash-prompt-extras.sh 
-git clone TODO
+git clone https://github.com/hencjo/git-bash-prompt-utils.git
 
 2. Put it someplace suitable
 ```
 cp git-bash-prompt-extras.sh ~/applications
 ```
 3. Include it in your .bashrc
-
 Add this to your .bashrc, before your PS1 is defined:
 ```
 source ~/applications/git-bash-prompt-extras.sh
 ```
 4. Set up your PS1 prompt:
 
-Replace \w in PS1 with___git_relative_subdir, like:
+Replace \w in PS1 with `__git_relative_subdir`, like:
 
 ```
 # Replace
