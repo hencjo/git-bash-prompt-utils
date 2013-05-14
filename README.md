@@ -13,8 +13,9 @@ When working in a git repo, show the working directory relative to the git root.
 ### Usage
 
 1. Somehow get your copy of git-bash-prompt-extras.sh 
+```
 git clone https://github.com/hencjo/git-bash-prompt-utils.git
-
+```
 2. Put it someplace suitable
 ```
 cp git-bash-prompt-extras.sh ~/applications
@@ -24,10 +25,9 @@ Add this to your .bashrc, before your PS1 is defined:
 ```
 source ~/applications/git-bash-prompt-extras.sh
 ```
-4. Set up your PS1 prompt:
+4. Tweak your PS1 prompt:
 
 Replace \w in PS1 with `__git_relative_subdir`, like:
-
 ```
 # Replace
 PS1=${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] 
