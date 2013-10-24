@@ -58,7 +58,7 @@ Replace \w in PS1 with `__git_relative_subdir`, like:
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 
 # with PS1 using __git_relative_subdir:
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] `__git_relative_subdir` \$\[\033[00m\] '
+PS1='`if [ $? = 0 ]; then echo "\[\e[32m\] ✔ "; else echo "\[\e[31m\] ✘ "; fi`\[\e[01;37m\]:`[[ $(git status 2> /dev/null | head -n2 | tail -n1) != "# Changes to be committed:" ]] && echo "\[\e[31m\]" || echo "\[\e[33m\]"``[[ $(git status -s 2> /dev/null | tail -n1) != "" ]] || echo "\[\e[32m\]"`$(__git_ps1 " %s\[\e[00m\] ")\[\e[01;34m\]`__git_relative_subdir`\[\e[00m\] \$ '
 ```
 (Make sure you use 's and not "s)
 
